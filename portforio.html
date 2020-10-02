@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link rel="stylesheet" href="./reset.css" />
+  <link rel="stylesheet" href="./header.css" />
+  <link rel="stylesheet" href="./laptop.css" />
+  <style>
+    .view {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      scroll-snap-type: y mandatory;
+      overflow: auto;
+    }
+    .section {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      scroll-snap-align: start;
+      scroll-behavior: smooth;
+    }
+    .section .content {
+      padding-top: 4h;
+      padding: 4vh;
+      font-size: 40px;
+      color: white;
+    }
+    .view :nth-child(1).section {
+      background-color: #1d1d1d;
+    }
+    .view :nth-child(2).section {
+      background-color: #1d1d1d;
+    }
+    .view :nth-child(3).section {
+      background-color: #1d1d1d;
+    }
+    .view :nth-child(4).section {
+      background-color: #1d1d1d;
+    }
+    .view :nth-child(5).section {
+      background-color: #1d1d1d;
+    }
+    .intro {
+      display: flex;
+      line-height: 8rem;
+      font-size: 4rem;
+      padding: 10vh 0 2vh 5vh;
+      color: gainsboro;
+      user-select: none;
+      overflow: hidden;
+    }
+    @keyframes ani-wave {
+      from {
+      }
+      to {
+        transform: rotate(30deg);
+      }
+    }
+    .wave {
+      transform-origin: bottom;
+      animation: ani-wave 0.1s 4 alternate forwards;
+    }
+    .wave:hover {
+      transform-origin: bottom;
+      animation: ani-wave 0.1s 4 alternate forwards;
+    }
+    @keyframes ani-bounce {
+      0% {
+        transform-origin: center;
+        color: darkturquoise;
+        transfrom: scale(0.4);
+      }
+      50% {
+        transform: scale(1.25);
+      }
+      100% {
+        color: white;
+        transform: scale(1);
+      }
+    }
+    .text {
+      display: flex;
+      flex-wrap: wrap;
+      font-weight: bold;
+    }
+    .bounce {
+      animation: ani-bounce 0.2s;
+    }
+    .code {
+      position: absolute;
+      top: 50%;
+      left: 15vw;
+      line-height: 2.5rem;
+      font-size: 1.85rem;
+      bottom: 40vh;
+    }
+  </style>
+  <body>
+    <div class="header">
+      <div class="header wrapper">
+        <div class="button">
+          <a href="#sec1" class="header button">Home</a>
+        </div>
+        <div class="button">
+          <a href="#sec2" class="header button">About</a>
+        </div>
+        <div class="button">
+          <a href="#sec3" class="header button">Skill</a>
+        </div>
+        <div class="button">
+          <a href="#sec4" class="header button">Project</a>
+        </div>
+        <div class="button">
+          <a href="#sec5" class="header button">Contact</a>
+        </div>
+        <div class="button">
+          <a
+            href="https://github.com/im0505"
+            target="_blank"
+            class="header button"
+            >Git</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="view">
+      <div class="section" id="sec1">
+        <div class="content">
+          <div class="intro">
+            <div class="text"></div>
+          </div>
+          <div class="container">
+            <div class="laptop">
+              <div class="laptop-block"></div>
+              <div class="laptop-top">
+                <div></div>
+                <div>
+                  <img
+                    src="https://image.ibb.co/mq2NAe/Screen_Shot_2018_08_03_at_09_56_21.png"
+                  />
+                </div>
+              </div>
+              <div class="laptop-bottom">
+                <div>
+                  <div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                  <div></div>
+                </div>
+                <div></div>
+              </div>
+            </div>
+          </div>
+          <div class="code"></div>
+        </div>
+      </div>
+      <div class="section" id="sec2">
+        <div class="content"></div>
+      </div>
+      <div class="section" id="sec3">
+        <div class="content">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, est?
+          Corrupti quod odit animi porro nihil nostrum eligendi et quia.
+        </div>
+      </div>
+      <div class="section" id="sec4">
+        <div class="content">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, est?
+          Corrupti quod odit animi porro nihil nostrum eligendi et quia.
+        </div>
+      </div>
+      <div class="section" id="sec5">
+        <div class="content">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, est?
+          Corrupti quod odit animi porro nihil nostrum eligendi et quia.
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth",
+        });
+      });
+    });
+    (function () {
+      const intro = document.querySelector(".text");
+      let text = `개발자 박영호의 \n포트폴리오 페이지 입니다. `;
+      window.onload = function () {
+        let index = 0;
+        let interval = setInterval(() => {
+          if (text[index] === undefined) {
+            clearInterval(interval);
+            setTimeout(() => {
+              const hand = document.createElement("div");
+              intro.appendChild(hand);
+              hand.innerText += "👋";
+              hand.classList.add("wave");
+            }, 100);
+          } else {
+            let char = document.createElement("span");
+            if (text[index] === " ") {
+              char.style.width = "1rem";
+            } else if (text[index] === "\n") {
+              char.style.width = "100%";
+            } else {
+              char.classList.add("bounce");
+              char.innerText = text[index];
+            }
+            intro.appendChild(char);
+            index++;
+          }
+        }, 70);
+      };
+
+      const openButton = document.getElementById("open"),
+        laptop = document.querySelector(".laptop");
+
+      laptop.classList.add("laptop--closed");
+
+      setTimeout(() => {
+        laptop.classList.remove("laptop--closed");
+      }, 1000);
+
+      const White = "darkgrey",
+        Violet = "rgb(198,120,221)",
+        Yellow = "rgb(209,154,102)",
+        Red = "rgb(224,108,89)",
+        Blue = "rgb(86,175,239)",
+        Green = "rgb(152,195,121)";
+
+      const inputCode = async (text, ParentDom) => {
+        const line = document.createElement("span");
+        line.style.color = "darkgrey";
+        ParentDom.appendChild(line);
+        let i = 0;
+        let nowText = text[0]; // slice 맨앞에서 부터 빼기
+        let txtToShow = "";
+        if (text.length === 0) {
+          return;
+        }
+        await new Promise((res, rej) => {
+          const interval = setInterval(() => {
+            if (i === nowText.text.length) {
+              clearInterval(interval);
+              (i = 0), (txtToShow = "");
+              line.style.color = nowText.color;
+              text.shift();
+              res([text, ParentDom]);
+            } else {
+              txtToShow += nowText.text[i];
+              line.innerText = txtToShow;
+              i++;
+            }
+          }, 70);
+        }).then((v) => {
+          inputCode(v[0], v[1]);
+        });
+      };
+      const code = document.querySelector(".code");
+      setTimeout(() => {
+        inputCode(
+          [
+            { text: "const ", color: Violet },
+            { text: "name ", color: Yellow },
+            { text: "= ", color: Blue },
+            { text: '"0505"', color: Green },
+            { text: ";\n", color: White },
+
+            { text: "const ", color: Violet },
+            { text: "gender ", color: Yellow },
+            { text: "= ", color: Blue },
+            { text: '"male"', color: Green },
+            { text: ";\n", color: White },
+
+            { text: "const ", color: Violet },
+            { text: "birth ", color: Yellow },
+            { text: "= ", color: Blue },
+            { text: "[", color: White },
+            { text: "1996", color: Yellow },
+            { text: ", ", color: White },
+            { text: "7", color: Yellow },
+            { text: ", ", color: White },
+            { text: "24", color: Yellow },
+            { text: "];\n", color: White },
+
+            { text: "var ", color: Violet },
+            { text: "position ", color: White },
+            { text: "= ", color: Blue },
+            { text: '"front-end developer"', color: Green },
+            { text: ";\n", color: White },
+
+            { text: "var ", color: Violet },
+            { text: "passion ", color: White },
+            { text: "= ", color: Blue },
+            { text: "true", color: Yellow },
+            { text: ";\n", color: White },
+
+            { text: "var ", color: Violet },
+            { text: "ambition ", color: White },
+            { text: "= ", color: Blue },
+            { text: "true", color: Yellow },
+            { text: ";\n", color: White },
+
+            { text: "const ", color: Violet },
+            { text: "smoke ", color: Yellow },
+            { text: "= ", color: Blue },
+            { text: "false", color: Yellow },
+            { text: ";\n", color: White },
+
+            { text: "var ", color: Violet },
+            { text: "like ", color: White },
+            { text: "= ", color: Blue },
+            { text: "[", color: White },
+            { text: '"cat"', color: Green },
+            { text: ", ", color: White },
+            { text: '"book"', color: Green },
+            { text: ", ", color: White },
+            { text: '"Netflix"', color: Green },
+
+            { text: "];\n", color: White },
+          ],
+          code
+        );
+      }, 1400);
+    })();
+  </script>
+</html>
