@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>박영호 - im05</title>
   </head>
   <link rel="stylesheet" href="./reset.css" />
   <link rel="stylesheet" href="./header.css" />
   <link rel="stylesheet" href="./laptop.css" />
+  <link rel="stylesheet" href="./about.css" />
   <style>
     .view {
       position: relative;
@@ -18,8 +19,11 @@
     }
     .section {
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 100%;
-      height: 100%;
+      height: 100vh;
       scroll-snap-align: start;
       scroll-behavior: smooth;
     }
@@ -33,22 +37,29 @@
       background-color: #1d1d1d;
     }
     .view :nth-child(2).section {
-      background-color: #1d1d1d;
+      background-color: #ffffff;
     }
     .view :nth-child(3).section {
-      background-color: #1d1d1d;
+      background-color: #3d3d3d;
     }
     .view :nth-child(4).section {
-      background-color: #1d1d1d;
+      background-color: #1f1f1f;
     }
     .view :nth-child(5).section {
       background-color: #1d1d1d;
     }
     .intro {
+      position: absolute;
+      z-index: 100;
       display: flex;
+      justify-content: center;
+      top:20%;
+      left: 20%;
+      align-items: center;
       line-height: 8rem;
       font-size: 4rem;
-      padding: 10vh 0 2vh 5vh;
+      text-shadow: 1px 1px 7px #000;
+      /* padding: 10vh 0 2vh 15vh; */
       color: gainsboro;
       user-select: none;
       overflow: hidden;
@@ -109,13 +120,10 @@
           <a href="#sec2" class="header button">About</a>
         </div>
         <div class="button">
-          <a href="#sec3" class="header button">Skill</a>
+          <a href="#sec3" class="header button">Project</a>
         </div>
         <div class="button">
-          <a href="#sec4" class="header button">Project</a>
-        </div>
-        <div class="button">
-          <a href="#sec5" class="header button">Contact</a>
+          <a href="#sec4" class="header button">Contact</a>
         </div>
         <div class="button">
           <a
@@ -139,9 +147,7 @@
               <div class="laptop-top">
                 <div></div>
                 <div>
-                  <img
-                    src="https://image.ibb.co/mq2NAe/Screen_Shot_2018_08_03_at_09_56_21.png"
-                  />
+                  <img src="./booting.png" />
                 </div>
               </div>
               <div class="laptop-bottom">
@@ -157,11 +163,34 @@
               </div>
             </div>
           </div>
+
           <div class="code"></div>
         </div>
       </div>
       <div class="section" id="sec2">
-        <div class="content"></div>
+        <div class="content">
+          <div class="about" />
+          <img src="./me.jpg" class="profile" />
+          <div class="about text">
+             <div class="about title">브라우저를 통한 연결, JavaScript의 매력에 빠져있는 신입 개발자입니다.</div>
+             <div class="about stack">
+              <div class="icon-wrapper">
+                <img src="./html.png" >
+              </div> 
+              <div class="icon-wrapper">
+                <img src="./css.png" >
+              </div> 
+              <div class="icon-wrapper">
+                <img src="./js.png" >
+              </div> 
+              <div class="icon-wrapper">
+                <img src="./react.png">
+              </div> 
+             </div>
+             <div class="about description">#JavaScript #Node.js #ReactJS #Redux #Git #Vim #AWS #MongoDB #Mongooese #passport.js #express.js #ECMAScript #Socket.io #TypeScript #VanillaJs #BootStrap #semantic-ui #Python #C++ #JAVA </div>
+          </div> 
+        </div>
+        </div>
       </div>
       <div class="section" id="sec3">
         <div class="content">
@@ -170,12 +199,6 @@
         </div>
       </div>
       <div class="section" id="sec4">
-        <div class="content">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, est?
-          Corrupti quod odit animi porro nihil nostrum eligendi et quia.
-        </div>
-      </div>
-      <div class="section" id="sec5">
         <div class="content">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, est?
           Corrupti quod odit animi porro nihil nostrum eligendi et quia.
@@ -231,6 +254,8 @@
       setTimeout(() => {
         laptop.classList.remove("laptop--closed");
       }, 1000);
+
+      
 
       const White = "darkgrey",
         Violet = "rgb(198,120,221)",
