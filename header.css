@@ -33,8 +33,8 @@ a.header.button {
 }
 a > img {
   margin-top: -10px;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 a.header.button:hover {
   transform-origin: center;
