@@ -1,6 +1,6 @@
 .header {
   position: fixed;
-  z-index: 1000;
+  z-index: 100;
 }
 .header.wrapper {
   position: relative;
@@ -9,7 +9,7 @@
   height: 5vh;
   background: rgba(255, 255, 255, 0%);
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   transition: 0.17s;
 }
@@ -30,6 +30,11 @@ a.header.button {
   text-decoration: none;
   transition: 0.15s;
   transform-origin: center;
+}
+a > img {
+  margin-top: -10px;
+  width: 2rem;
+  height: 2rem;
 }
 a.header.button:hover {
   transform-origin: center;

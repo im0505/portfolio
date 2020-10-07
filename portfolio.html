@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="./header.css" />
   <link rel="stylesheet" href="./laptop.css" />
   <link rel="stylesheet" href="./about.css" />
+  <link rel="stylesheet" href="./project.css" />
+  <link rel="stylesheet" href="./contact.css" />
   <style>
     .view {
       position: relative;
@@ -28,9 +30,7 @@
       scroll-behavior: smooth;
     }
     .section .content {
-      padding-top: 4h;
       padding: 4vh;
-      font-size: 40px;
       color: white;
     }
     .view :nth-child(1).section {
@@ -53,8 +53,8 @@
       z-index: 100;
       display: flex;
       justify-content: center;
-      top:20%;
-      left: 20%;
+      top: 15%;
+      left: 15%;
       align-items: center;
       line-height: 8rem;
       font-size: 4rem;
@@ -64,6 +64,7 @@
       user-select: none;
       overflow: hidden;
     }
+   
     @keyframes ani-wave {
       from {
       }
@@ -104,13 +105,93 @@
     .code {
       position: absolute;
       top: 50%;
-      left: 15vw;
+      left: 10vw;
       line-height: 2.5rem;
       font-size: 1.85rem;
-      bottom: 40vh;
+      /* bottom: 40vh; */
+    }
+     @media (max-width: 600px){
+       .section .content{
+         padding: 1vh;
+       }
+      .intro {
+        font-size: 2rem;
+        line-height: 3rem;
+      }
+      .code {
+        top:40%;
+        font-size: 1rem;
+        line-height: 1.2rem;
+      }
     }
   </style>
   <body>
+    <div class="modal">
+      <div class="modal-content" >
+        <div class="modal-header">
+        </div>
+        <img src="./bj.PNG" >
+        <div class="modal-description">
+         <div class="modal-description main">
+           웹소켓을 이용하여 실시간 멀티 카드게임을 구현.
+         </div> 
+         <div class="modal-description tech">
+           #React #Redux #Socket.io #Express #EC2 #MongoDBCluster #Mongoose #jwt #bycript
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button id='bjapp'>PLAY</button>
+        </div>
+      </div>
+      <div class="modal-content" >
+        <div class="modal-header">
+        </div>
+        <img src="./video.png" >
+        <div class="modal-description">
+          <div class="modal-description main">
+          Embed 태그로 블럭광고가 없고 백그라운드에서 재생 가능한 유튜브 플레이어 
+          </div> 
+          <div class="modal-description tech">
+            #ReactHooks #EC2 #YoutubeAPI 
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id='videoapp'>OPEN</button>
+        </div>
+      </div>
+      <div class="modal-content" >
+        <div class="modal-header">
+        </div>
+        <img src="./chatbot.png" >
+        <div class="modal-description">
+          <div class="modal-description main">
+            대학 정보를 실시간 크롤링하여 제공하는 API서버
+          </div>
+          <div class="modal-description tech">
+            #Express #KakaoAPI #pug 
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id='chatcode'>Code</button>
+        </div>
+      </div>
+      <div class="modal-content" >
+        <div class="modal-header">
+        </div>
+        <img src="./deny.png" >
+        <div class="modal-description">
+          <div class="modal-description main">
+            서울시 대중교통 승차거부 신고 & 알림 어플리케이션
+          </div>
+          <div class="modal-description tech">
+            #Android #SQLite  
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id='denycode'>Code</button>
+        </div>
+      </div>
+    </div>
     <div class="header">
       <div class="header wrapper">
         <div class="button">
@@ -130,7 +211,9 @@
             href="https://github.com/im0505"
             target="_blank"
             class="header button"
-            >Git</a
+            >
+            <img src="./github-logo.png"/>
+            </a
           >
         </div>
       </div>
@@ -163,7 +246,6 @@
               </div>
             </div>
           </div>
-
           <div class="code"></div>
         </div>
       </div>
@@ -187,25 +269,70 @@
                 <img src="./react.png">
               </div> 
              </div>
-             <div class="about description">#JavaScript #Node.js #ReactJS #Redux #Git #Vim #AWS #MongoDB #Mongooese #passport.js #express.js #ECMAScript #Socket.io #TypeScript #VanillaJs #BootStrap #semantic-ui #Python #C++ #JAVA </div>
+             <div class="about description">#JavaScript #Node.js #ReactJS #Redux #Git #Vim #AWS #MongoDB #Mongooese #passport.js #express.js #ECMAScript #Socket.io #TypeScript #VanillaJs #BootStrap #semantic-ui #AdobePhotoShop #Python #C++ #JAVA #React-native</div>
           </div> 
         </div>
         </div>
       </div>
       <div class="section" id="sec3">
         <div class="content">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, est?
-          Corrupti quod odit animi porro nihil nostrum eligendi et quia.
+          Toy Project 
+         <div class="open-modal">
+            <div class="project-wrapper" >
+              <div class="see-detail"id='1'> 자세히 보기 </div>
+              <img src="./thumb_bj.png" alt="" class="project">
+              <div class="thumbnail-des">
+                <div class="title">BlackJack</div>
+                <div class="description">실시간 멀티플레이 카드게임</div>
+              </div>
+            </div>
+            <div class="project-wrapper">
+              <div class="see-detail" id='2'>자세히 보기</div>
+              <img src="./thumb_video.png" alt="" class="project">
+              <div class="thumbnail-des">
+                <div class="title">Video Player</div>
+                <div class="description">백그라운드 Youtube Player</div>
+              </div>
+            </div>
+            <div class="project-wrapper">
+              <div class="see-detail" id='3'>자세히 보기</div>
+              <img src="./thumb_chat.png" alt="" class="project">
+              <div class="thumbnail-des">
+                <div class="title">College Chat-bot</div>
+                <div class="description">대학 정보를 알려주는 채팅봇</div>
+                </div>
+          </div>
+            <div class="project-wrapper">
+              <div class="see-detail" id='4'>자세히 보기</div>
+              <img src="./thumb_deny.png" alt="" class="project">
+              <div class="thumbnail-des">
+                <div class="title">Deny NoNo</div>
+                <div class="description">승차거부 알림 모바일 앱</div>
+                </div>
+          </div>
+         </div> 
         </div>
       </div>
       <div class="section" id="sec4">
         <div class="content">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, est?
-          Corrupti quod odit animi porro nihil nostrum eligendi et quia.
+          Contact
+          <div class="contact-text">
+            <div>
+              To. im05@kakao.com
+            </div>
+            <input type="text" placeholder="Title" id="mailTitle">
+            <input type="text" value='from portfolio page' placeholder="CC" id="mailCc">
+            <textarea name="" id="mailBody" cols="30" rows="10"></textarea>
+          </div>
+          
+          <div class="sendMail"> Send Mail </div>
         </div>
       </div>
     </div>
   </body>
+  <script src="./modal.js"></script>
+  <script src="./contact.js"></script>
+
   <script>
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function (e) {
@@ -255,7 +382,6 @@
         laptop.classList.remove("laptop--closed");
       }, 1000);
 
-      
 
       const White = "darkgrey",
         Violet = "rgb(198,120,221)",
